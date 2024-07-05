@@ -1,0 +1,28 @@
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+.env
+
+vercel.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React
+build/
+public/favicon.ico
+public/manifest.json
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.swp
