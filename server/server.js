@@ -6,7 +6,7 @@ import { Server } from 'socket.io';
 import 'dotenv/config';
 
 import './db/connection.js';
-import Users from './models/users.js';
+import Users from './models/Users.js';
 import Conversations from './models/Conversations.js';
 import Messages from './models/Messages.js';
 
@@ -204,39 +204,39 @@ app.get("/api/conversations/:userId", async(req, res) => {
 });
 
 
-// app.post("/api/message", async(req, res) => {
-//     try {
-//         const { conversationId, senderId, message, receiverId = '' } = req.body;
+app.post("/api/message", async(req, res) => {
+    try {
+        const { conversationId, senderId, message, receiverId = '' } = req.body;
 
-//         if(!senderId || !message) {
-//             return res.status(400).send('Please fill all the required fields');
-//         }
+        if(!senderId || !message) {
+            return res.status(400).send('Please fill all the required fields');
+        }
 
-//         if(conversationId === 'new' && receiverId) {
-//             const newConversation = new Conversations({ members: [senderId, receiverId] });
-//             await newConversation.save();
+        if(conversationId === 'new' && receiverId) {
+            const newConversation = new Conversations({ members: [senderId, receiverId] });
+            await newConversation.save();
 
-//             const newMessage = new Messages({ 
-//                 conversationId: newConversation._id, 
-//                 senderId, 
-//                 message 
-//             });
-//             await newMessage.save();
+            const newMessage = new Messages({ 
+                conversationId: newConversation._id, 
+                senderId, 
+                message 
+            });
+            await newMessage.save();
             
-//             return res.status(200).send("Message sent successfully");
+            return res.status(200).send("Message sent successfully");
         
-//         } else if(!conversationId && !receiverId) {
-//             return res.status(400).send('Please fill all the required fields');
-//         }
+        } else if(!conversationId && !receiverId) {
+            return res.status(400).send('Please fill all the required fields');
+        }
 
-//         const newMessage = new Messages({ conversationId, senderId, message });
-//         await newMessage.save();
-//         res.status(200).send("Message sent successfully");
+        const newMessage = new Messages({ conversationId, senderId, message });
+        await newMessage.save();
+        res.status(200).send("Message sent successfully");
         
-//     } catch (error) {
-//         console.log(error, 'Error');
-//     }
-// });
+    } catch (error) {
+        console.log(error, 'Error');
+    }
+});
 
 
 app.get("/api/message/:conversationId", async(req, res) => {
