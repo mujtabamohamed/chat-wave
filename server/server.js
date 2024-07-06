@@ -5,6 +5,8 @@ import cors from "cors";
 import { Server } from 'socket.io';
 import 'dotenv/config';
 
+import http from 'http'; 
+
 import './db/connection.js';
 import Users from './models/Users.js';
 import Conversations from './models/Conversations.js';
@@ -14,7 +16,9 @@ import Messages from './models/Messages.js';
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-const io = new Server(8080, {
+const server = http.createServer(app);
+
+const io = new Server(server, {
     cors: {
         origin: process.env.REACT_APP_CORS_URL
     }
@@ -305,6 +309,6 @@ app.get('/api/users/:userId', async(req, res) => {
 });
 
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

@@ -32,7 +32,7 @@ function Form({
 
         e.preventDefault();
         try {
-            const res = await fetch(`https://chat-wave-z2f9.onrender.com/api/${isSignInPage ? 'login' : 'register'}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/${isSignInPage ? 'login' : 'register'}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
