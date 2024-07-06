@@ -11,7 +11,7 @@ import Conversations from './models/Conversations.js';
 import Messages from './models/Messages.js';
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 const app = express();
 
 const io = new Server(8080, {
