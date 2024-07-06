@@ -62,7 +62,7 @@ function Dashboard() {
     useEffect(() => {
         const loggedInUser = JSON.parse(localStorage.getItem('user:detail'));
         const fetchConversations = async () => {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/conversations/${loggedInUser?.id}`, {
+            const res = await fetch(`https://chat-wave-z2f9.onrender.com/conversations/${loggedInUser?.id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ function Dashboard() {
 
     useEffect(() => {
         async function fetchUsers() {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/users/${user?.id}`, {
+            const res = await fetch(`https://chat-wave-z2f9.onrender.com/users/${user?.id}`, {
                 method: 'GET',
                 headers: {
                 'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ function Dashboard() {
     }
 
     async function fetchMessages(conversationId, receiver) {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/message/${conversationId}?senderId=${user?.id}&&receiverId=${receiver?.receiverId}`, {
+        const res = await fetch(`https://chat-wave-z2f9.onrender.com/message/${conversationId}?senderId=${user?.id}&&receiverId=${receiver?.receiverId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ function Dashboard() {
             conversationId: messages?.conversationId
         });
 
-        await fetch(`${process.env.REACT_APP_API_URL}/message`, {
+        await fetch(`https://chat-wave-z2f9.onrender.com/message`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
