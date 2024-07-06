@@ -467,8 +467,8 @@ function Dashboard() {
                                         <div 
                                             className="cursor-pointer flex items-center ml-7" 
                                             onClick={() => { 
-                                                fetchMessages('new', user), 
-                                                setShowContacts(!showContacts) 
+                                                fetchMessages('new', user); 
+                                                setShowContacts(!showContacts); 
                                             }}>
                                             <div><img src={Avatar} width={50} height={50} alt="Avatar" /></div>
                                             <div className="ml-6">
