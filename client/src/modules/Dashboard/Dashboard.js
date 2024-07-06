@@ -464,7 +464,12 @@ function Dashboard() {
                             filteredContacts.map(({ user }) => {
                                 return (                                    
                                     <div className="cursor-pointer flex items-center py-4 text-[#ffffff] hover:bg-[#252525]">
-                                        <div className="cursor-pointer flex items-center ml-7" onClick={() => fetchMessages('new', user)}>
+                                        <div 
+                                            className="cursor-pointer flex items-center ml-7" 
+                                            onClick={() => { 
+                                                fetchMessages('new', user), 
+                                                setShowContacts(!showContacts) 
+                                            }}>
                                             <div><img src={Avatar} width={50} height={50} alt="Avatar" /></div>
                                             <div className="ml-6">
                                                 <h3 className="text-xl font-semibold">{user?.fullName}</h3>
