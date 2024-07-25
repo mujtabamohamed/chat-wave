@@ -15,27 +15,27 @@ https://chat-wave-online.onrender.com/
 
 ## Tech Stack
 
-- Frontend: React, HTML, CSS
-- Backend: Node.js, Express.js
-- Database: MongoDB
-- WebSockets: Socket.io
+- **Frontend**: React, HTML, CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **WebSockets**: Socket.io
 
 ## Installation
 
-Clone the repository
+**Clone the repository**
 ```bash
   git clone https://github.com/mujtabamohamed/chat-wave.git
   cd chat-wave
 ```
 
 Install dependencies
-- For the server:
+- **For the server:**
 ```bash
   cd server
   npm install
 
 ```
-- For the client:
+- **For the client:**
 ```bash
   cd client
   npm install
@@ -43,13 +43,13 @@ Install dependencies
 
 ## Set up environment variables:
 
-- Create a .env file in the server directory and add your configuration.
+- **Create a .env file in the server directory and add your configuration.**
 ```bash
   REACT_APP_API_URL=
   REACT_APP_SOCKET_URL=
 ```
 
-- Create a .env file in the client directory and add your configuration.
+- **Create a .env file in the client directory and add your configuration.**
 ```bash
   PORT=
   JWT_SECRET_KEY=
@@ -60,13 +60,13 @@ Install dependencies
 
 ## Run the application
 
-- Start the server:
+- **Start the server:**
 ```bash
   cd server
   npm start
 ```
 
-- Start the client:
+- **Start the client:**
 ```bash
   cd client
   npm start
