@@ -15,7 +15,7 @@ https://chat-wave-online.onrender.com/
 
 ## Tech Stack
 
-- **Frontend**: React, HTML, CSS
+- **Frontend**: React, TailwindCSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **WebSockets**: Socket.io
