@@ -28,7 +28,7 @@ https://chat-wave-online.onrender.com/
   cd chat-wave
 ```
 
-Install dependencies
+**Install dependencies**
 - **For the server:**
 ```bash
   cd server
