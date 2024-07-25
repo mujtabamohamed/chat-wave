@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
 
-import Avatar from "../../assets/avatar.svg";
+import Avatar from "../../assets/avatar.png";
 import Logo from "../../assets/Chat-Logo.png";
 import Input from "../../components/Input/Input.js";
 import Button from "../../components/Button/Button.js";
@@ -167,7 +167,7 @@ function Dashboard() {
 
 
             <div className={`w-[100%] h-screen bg-[#202020] overflow-y-scroll overflow-x-hidden
-                ${showContacts ? 'xs:hidden' : 'block xs:w-[100%] md:w-[35%] lg:w-[30%] 2xl:w-[25%]'}
+                ${showContacts ? 'xs:hidden md:block lg:block 2xl:block md:w-[35%] lg:w-[30%] 2xl:w-[25%]'  : 'block xs:w-[100%] md:w-[35%] lg:w-[30%] 2xl:w-[25%]'}
                 ${showMessages ? 'xs:hidden md:block' : ''}`}>
           
                 <div className="mt-6 pl-6 flex items-center xs:mt-6 xs:pl-6">
@@ -221,7 +221,7 @@ function Dashboard() {
                                                     <img 
                                                         src={Avatar} 
                                                         alt="Avatar" 
-                                                        className="xs:w-14 xs:h-14 md:w-10 md:w-10 xl:w-14 xl:h-14"    
+                                                        className="xs:w-14 xs:h-14 md:w-10 xl:w-14 xl:h-14"    
                                                     />
                                                 </div>
 
@@ -240,7 +240,7 @@ function Dashboard() {
                 <div className="relative bottom-0 right-0">
                     <button 
                         className="absolute bg-blue-600 rounded-full flex items-center justify-center 
-                            text-white shadow-lg w-16 h-16 top-144 right-4 2xl:hidden"
+                            text-white shadow-lg w-16 h-16 top-56 right-4 2xl:hidden"
                         onClick={() => setShowContacts(!showContacts)}>
                         <svg  
                             xmlns="http://www.w3.org/2000/svg"  
@@ -458,7 +458,7 @@ function Dashboard() {
                     />
                 </div>
                 
-                <div className="">
+                <div className="" onClick={() => {setShowMessages(!showMessages)}}>
                     {
                         filteredContacts.length > 0 ?
                             filteredContacts.map(({ user }) => {
