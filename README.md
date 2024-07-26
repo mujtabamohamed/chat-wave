@@ -1,4 +1,4 @@
- ![Sign up]([https://i.postimg.cc/5yqdTGtW/Pic-1.png](https://i.postimg.cc/c19dsbFZ/Chat-Logo.png) 
+![Sign up](https://i.postimg.cc/5yqdTGtW/Pic-1.png)
 # ChatWave
 
 ChatWave is a real-time chat application that allows users to communicate instantly. The project is built with a modern tech stack to ensure a responsive and interactive user experience.
