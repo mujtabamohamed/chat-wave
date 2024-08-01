@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input/Input.js";
 import Button from "../../components/Button/Button.js";
 import Logo from "../../assets/Chat-Logo.png";
+import Loader from "../../components/Loader/Loader.js";
 
 import { ReactComponent as EmailIcon } from "../../assets/email-icon.svg";
 import { ReactComponent as UserIcon } from "../../assets/user-icon.svg";
@@ -17,6 +18,7 @@ function Form({
 }) {
 
     const [showPassword, setShowPassword] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const[data, setData] = useState({
         ...(!isSignInPage && {
@@ -31,6 +33,7 @@ function Form({
     async function handleSubmit (e) {
 
         e.preventDefault();
+        setIsLoading(true);
         try {
             const res = await fetch(`${process.env.REACT_APP_API_URL}/${isSignInPage ? 'login' : 'register'}`, {
                 method: 'POST',
@@ -67,7 +70,9 @@ function Form({
 
         } catch (error) {
             console.error("Error during submission:", error);
-        } 
+        } finally {
+            setIsLoading(false); // Hide loading GIF
+        }
     }
 
     
@@ -154,6 +159,10 @@ function Form({
                     type='submit'
                     buttonClassName="bg-[#1476ff] py-2 w-[250px] hover:bg-[#146ae2] xs:w-[350px] sm:w-[350px] lg:w-[400px] xl:w-[420px] 2xl:w-[420px]"
                 />
+
+                {isLoading && (
+                    <Loader /> // Loading component displayed here
+                )}
 
                 <div className="text-[#c9c9c9] font-normal text-sm mt-3 sm:text-sm sm:mt-3 lg:text-[16px] lg:mt-4 ">
                     {isSignInPage ? "Don't have an account? " : "Have an account already? "}

@@ -240,7 +240,7 @@ function Dashboard() {
                 <div className="relative bottom-0 right-0">
                     <button 
                         className="absolute bg-blue-600 rounded-full flex items-center justify-center 
-                            text-white shadow-lg w-16 h-16 top-56 right-4 2xl:hidden"
+                            text-white shadow-lg w-16 h-16 top-64 right-4 2xl:hidden"
                         onClick={() => setShowContacts(!showContacts)}>
                         <svg  
                             xmlns="http://www.w3.org/2000/svg"  
@@ -314,7 +314,7 @@ function Dashboard() {
                 }
 
                 <div className="h-[80%] w-full overflow-y-scroll overflow-x-hidden">
-                    <div className="p-14">     
+                    <div className="xs:p-5 md:p-16">     
                         {messages?.messages?.length > 0 ?
                             messages.messages.map(({ message, user: { id } = {} }) => {                     
                                 return (
