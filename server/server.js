@@ -4,6 +4,8 @@ import jwt from 'jsonwebtoken';
 import cors from "cors";
 import { Server } from 'socket.io';
 import 'dotenv/config';
+import cron from 'node-cron';
+import axios from 'axios';
 
 import http from 'http'; 
 
@@ -308,6 +310,17 @@ app.get('/api/users/:userId', async(req, res) => {
     }
 });
 
+// Keep-alive mechanism
+const keepAliveUrl = process.env.CHATWAVE_SERVER_URL;
+
+cron.schedule('*/5 * * * *', async () => {
+    try {
+        const response = await axios.get(keepAliveUrl);
+        console.log(`Keep-alive ping successful: ${response.status}`);
+    } catch (error) {
+        console.error(`Keep-alive ping failed: ${error.message}`);
+    }
+});
 
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

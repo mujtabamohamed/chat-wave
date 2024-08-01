@@ -5,6 +5,7 @@ import Input from "../../components/Input/Input.js";
 import Button from "../../components/Button/Button.js";
 import Logo from "../../assets/Chat-Logo.png";
 import Loader from "../../components/Loader/Loader.js";
+import { FaGithub } from 'react-icons/fa';
 
 import { ReactComponent as EmailIcon } from "../../assets/email-icon.svg";
 import { ReactComponent as UserIcon } from "../../assets/user-icon.svg";
@@ -82,7 +83,7 @@ function Form({
 
     return (
         <div className="bg-[#131313] h-screen flex flex-col items-center justify-center px-8 xs:px-4 sm:px-8 lg:px-4 xl:px-72 2xl:px-96 3xl:px-128 4xl:px-144">
-            <div className="bg-[#131313] flex flex-col items-center justify-center xl:flex-row xl:justify-between w-full xl:w-[100%] 2xl:w-[100%]">
+            <div className="bg-[#131313] flex flex-col items-center justify-center xl:flex-row xl:justify-between w-full xl:w-[100%] 2xl:w-[100%] xs:mt-[-24px]">
                 <div className="flex flex-col items-center justify-center mb-4 xs:mb-6 sm:mb-8 lg:mb-10 xl:mb-0 xl:mr-8 3xl:mr-16">
                 <img 
                     src={Logo}  
@@ -103,7 +104,7 @@ function Form({
                     <Input
                     name="name"
                     placeholder="Enter your full name"
-                    className="xs:w-[350px] sm:w-[350px] mb-4 w-[250px] lg:w-[400px] xl:w-[420px] 2xl:w-[420px]" 
+                    className="xs:w-[320px] sm:w-[350px] mb-4 w-[250px] lg:w-[400px] xl:w-[420px] 2xl:w-[420px]" 
                     inputClassName="p-4 bg-[#131313] placeholder-[#808080] focus:border-[#808080]
                         focus:ring-0 outline-none text-white pl-10"
                     value={data.fullName}
@@ -119,7 +120,7 @@ function Form({
                     name="email"
                     type='email'
                     placeholder="Enter your email"
-                    className="xs:w-[350px] sm:w-[350px] mb-4 w-[250px] lg:w-[400px] xl:w-[420px] 2xl:w-[420px]"
+                    className="xs:w-[320px] sm:w-[350px] mb-4 w-[250px] lg:w-[400px] xl:w-[420px] 2xl:w-[420px]"
                     inputClassName="p-4 bg-[#131313] placeholder-[#808080] focus:border-[#808080] 
                     focus:ring-0 outline-none text-white pl-10"
                     value={data.email}
@@ -130,7 +131,7 @@ function Form({
                     }
                 />
 
-                <div className="relative xs:w-[350px] sm:w-[350px] mb-8 w-[250px] sm:mb-6 lg:w-[400px] lg:mb-10 xl:w-[420px] 2xl:w-[420px]" >
+                <div className="relative xs:w-[320px] sm:w-[350px] mb-8 w-[250px] sm:mb-6 lg:w-[400px] lg:mb-10 xl:w-[420px] 2xl:w-[420px]" >
                     <Input
                     name="password"
                     type={showPassword ? 'text' : 'password'}
@@ -157,7 +158,7 @@ function Form({
                 <Button
                     label={isSignInPage ? 'Sign in' : 'Sign up'}
                     type='submit'
-                    buttonClassName="bg-[#1476ff] py-2 w-[250px] hover:bg-[#146ae2] xs:w-[350px] sm:w-[350px] lg:w-[400px] xl:w-[420px] 2xl:w-[420px]"
+                    buttonClassName="bg-[#1476ff] py-2 w-[250px] hover:bg-[#146ae2] xs:w-[320px] sm:w-[350px] lg:w-[400px] xl:w-[420px] 2xl:w-[420px]"
                 />
 
                 {isLoading && (
@@ -172,6 +173,16 @@ function Form({
                     {isSignInPage ? "Sign up" : "Sign in"}
                     </span>
                 </div>
+
+                <a
+                    href="https://github.com/mujtabamohamed/chat-wave"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-row justify-center items-center text-[#c5c5c5] font-normal text-center rounded-lg text-[16px] 
+                    py-2 w-[250px] mt-10 bg-[#151515] border border-[#444444] drop-shadow-xl shadow-[#0c0c0c] hover:drop-shadow-[#252525]">
+                    <FaGithub size={24} className="mr-2" />
+                    <span>View on Github</span>
+                </a>
                 </form>
             </div>
             </div>
