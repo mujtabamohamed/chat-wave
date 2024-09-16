@@ -25,8 +25,8 @@ https://chat-wave-online.onrender.com/
 
 **Clone the repository**
 ```bash
-  https://github.com/mujtabamohamed/ShopEase.git
-  cd ShopEase
+  https://github.com/mujtabamohamed/chat-wave.git
+  cd chat-wave
 ```
 
 **Install dependencies**
