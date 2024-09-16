@@ -25,8 +25,8 @@ https://chat-wave-online.onrender.com/
 
 **Clone the repository**
 ```bash
-  git clone https://github.com/mujtabamohamed/chat-wave.git
-  cd chat-wave
+  https://github.com/mujtabamohamed/ShopEase.git
+  cd ShopEase
 ```
 
 **Install dependencies**
@@ -47,16 +47,17 @@ https://chat-wave-online.onrender.com/
 - **Create a .env file in the server directory and add your configuration.**
 ```bash
   REACT_APP_API_URL=
-  REACT_APP_SOCKET_URL=
 ```
 
 - **Create a .env file in the client directory and add your configuration.**
 ```bash
   PORT=
   JWT_SECRET_KEY=
-  REACT_APP_CORS_URL=
-  DB_USERNAME=
-  DB_PASSWORD=
+  PG_USER=
+  PG_HOST=
+  PG_DATABASE=
+  PG_PASSWORD=
+
 ```
 
 ## Run the application
