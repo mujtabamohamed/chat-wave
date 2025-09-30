@@ -7,7 +7,7 @@ ChatWave is a real-time chat application that allows users to communicate instan
 
 https://chat-wave-online.onrender.com/
 
-![Chatwave Demo](./assets/src/Chatwave.gif)
+![Chatwave Demo](client/src/assets/Chatwave.gif)
 
 ## Tech Stack
 
